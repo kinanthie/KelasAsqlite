@@ -1,4 +1,4 @@
-package com.example.kelasasqlite.database;
+package com.example.kelasasqlite;
 
 import android.util.Log;
 import android.widget.Button;
@@ -65,7 +65,7 @@ public class TambahTeman extends AppCompatActivity {
                     Toast.makeText(TambahTeman.this,"Gagal simpan data",Toast.LENGTH_SHORT).show();
                 }
 
-        }){
+            }){
                 @Override
                 protected Map<String,String> getParams(){
                     Map<String,String> params = new HashMap<>();

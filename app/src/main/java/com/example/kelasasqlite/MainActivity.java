@@ -17,7 +17,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kelasasqlite.adapter.TemanAdapter;
-import com.example.kelasasqlite.database.TambahTeman;
+import com.example.kelasasqlite.TambahTeman;
 import com.example.kelasasqlite.database.Teman;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
