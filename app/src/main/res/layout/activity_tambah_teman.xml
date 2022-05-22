@@ -3,18 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="TambahTeman">
 
     <EditText
         android:id="@+id/edNama"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="168dp"
+        android:layout_marginTop="112dp"
         android:ems="10"
         android:hint="Nama"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="100dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <EditText
         android:id="@+id/edTelpon"
@@ -23,15 +26,20 @@
         android:ems="10"
         android:hint="Telpon"
         android:inputType="phone"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="255dp" />
+        app:layout_constraintEnd_toEndOf="@+id/edNama"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edNama"
+        app:layout_constraintTop_toBottomOf="@id/edNama"/>
 
     <Button
         android:id="@+id/btnSimpan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="152dp"
         android:text="Simpan"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="383dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/edTelpon"
+        app:layout_constraintStart_toStartOf="@id/edTelpon"
+        app:layout_constraintTop_toBottomOf="@id/edTelpon"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

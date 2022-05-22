@@ -17,7 +17,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.kelasasqlite.adapter.TemanAdapter;
-import com.example.kelasasqlite.database.DBController;
+import com.example.kelasasqlite.database.TambahTeman;
 import com.example.kelasasqlite.database.Teman;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -26,15 +26,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
+    private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private TemanAdapter adapter;
     private ArrayList<Teman> temanArrayList = new ArrayList<>();
-    DBController controller = new DBController(this);
-    String id,nm,tlp;
-    private FloatingActionButton fab;
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static String url_select = "http://10.0.2.2/umyTI/bacateman.php";
@@ -58,13 +55,14 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,TemanBaru.class);
+                Intent intent = new Intent(MainActivity.this, TambahTeman.class);
                 startActivity(intent);
             }
         });
     }
 
    public  void  BacaData(){
+        temanArrayList.clear();
        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
        JsonArrayRequest jArr = new JsonArrayRequest(url_select, new Response.Listener<JSONArray>() {
            @Override
@@ -84,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                        e.printStackTrace();
                    }
                }
+               adapter.notifyDataSetChanged();
            }
        }, new Response.ErrorListener() {
            @Override
